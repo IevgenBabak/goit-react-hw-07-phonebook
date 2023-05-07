@@ -1,32 +1,38 @@
-import propTypes from 'prop-types';
-import css from './ContactList.module.css';
+import './ContactList.module.css';
+import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import { getFilter } from 'redux/selector';
+import { Contact } from 'components/Contact/Contact';
+import { useGetContactsQuery } from 'redux/contactsSlice';
 
-export const ContactList = ({ contacts, handleDelete }) => (
-  <div className={css.wraperContactList}>
-    <ul className={css.contactList}>
-      {contacts.map((contact, id) => (
-        <li key={id} className={css.contactListItem}>
-          {contact.name}: {contact.number}
-          <button
-            type="button"
-            className={css.contactListItemBtn}
-            onClick={() => handleDelete(contact.id)}
-          >
-            Delete
-          </button>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+const ContactList = () => {
+  const { data, error, isLoading } = useGetContactsQuery();
+  const { filter } = useSelector(getFilter);
+
+  if (!data) {
+    return null;
+  }
+  const visibleContacts = data.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  return (
+    <div>
+      {!error && isLoading && <div>Loading</div>}
+      <ul className="List_box">
+        {visibleContacts.map(contact => (
+          <li className="List_item" key={contact.id}>
+            <Contact contact={contact} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ContactList;
 
 ContactList.propTypes = {
-  contacts: propTypes.arrayOf(
-    propTypes.exact({
-      id: propTypes.string.isRequired,
-      name: propTypes.string.isRequired,
-      number: propTypes.string.isRequired,
-    })
-  ),
-  handleDelete: propTypes.func.isRequired,
+  contacts: PropTypes.object,
+  input: PropTypes.string,
 };
