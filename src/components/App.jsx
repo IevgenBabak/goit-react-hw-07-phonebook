@@ -2,7 +2,7 @@ import ContactForm from './ContactForm';
 import Filter from './Filter';
 import ContactList from './ContactList';
 
-// import './App.css';
+import './App.css';
 
 const App = () => {
   return (

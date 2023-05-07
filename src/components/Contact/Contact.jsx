@@ -1,5 +1,5 @@
 import { useDeleteContactMutation } from 'redux/contactsSlice';
-// import './Contact.css';
+import './Contact.css';
 import PropTypes from 'prop-types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
