@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formName,
+.formNumber {
+  display: flex;
+  flex-direction: column;
+  margin: 8px auto;
+  align-items: center;
+  font-size: large;
+  text-align: left;
+  padding: 8px 240px 8px 16px;
+}
+.formName:hover,
+.formNumber:hover {
+  background-color: #eff0f3;
+  cursor: pointer;
+}
+
+.formBtn {
+  margin-top: 16px;
+  margin-bottom: 32px;
+  background-color: rgba(41, 68, 120, 0.8);
+  border: none;
+  border-radius: 6px;
+  font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  height: 36px;
+  line-height: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  min-width: 185px;
+  padding: 0 16px 0 16px;
+  color: white;
+  cursor: pointer;
+}
+
+.formBtn:hover {
+  background-color: rgb(4, 34, 94);
+  cursor: pointer;
+}
