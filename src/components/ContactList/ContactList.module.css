@@ -1,0 +1,22 @@
+.contactListItemBtn {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  background-color: rgba(41, 68, 120, 0.8);
+  border: none;
+  border-radius: 6px;
+  font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  height: 36px;
+  line-height: 20px;
+  margin-left: 20px;
+  margin-right: 6px;
+  min-width: 50px;
+  padding: 0 16px 0 16px;
+  color: white;
+  cursor: pointer;
+}
+
+.contactListItemBtn:hover {
+  background-color: rgb(4, 34, 94);
+  cursor: pointer;
+}

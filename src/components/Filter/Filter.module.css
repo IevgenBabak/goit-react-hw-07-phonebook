@@ -1,0 +1,14 @@
+.filterName {
+  display: flex;
+  flex-direction: column;
+  margin: 8px auto 16px;
+  align-items: center;
+  font-size: large;
+  text-align: left;
+  padding: 8px 240px 8px 16px;
+}
+
+.filterName:hover {
+  background-color: #eff0f3;
+  cursor: pointer;
+}
